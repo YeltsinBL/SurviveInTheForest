@@ -56,5 +56,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "SurviveInTheForest.sln"
+    "dotnet.defaultSolution": "SurviveInTheForest.sln",
+    "dotnet.preferCSharpExtension": true
 }
