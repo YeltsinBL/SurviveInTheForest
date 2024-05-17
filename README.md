@@ -46,3 +46,8 @@ Canvas: contiene todos los elementos que se visualizará en este escenario.
   - Eliminamos la imagen de referencia del GameObject donde se visualizarán el personaje seleccionado.
 
 > Nota: Para agregar las nuevas escenas al juego, hay que dirigirse a: File>Build Settings y arrastramos las escenas que faltan, al lado derecho de los nombres de las escenas, indica el número por orden.
+
+### Primera Escena
+
+- Se agrega un nuevo Object vacio, que servirá para agregar el personaje seleccionado.
+- Se copia el Object AdministradorPersonaje, para que cargue directamente el personaje seleccionado, sino se muestra la escena inicial.
