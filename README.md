@@ -14,7 +14,10 @@ Canvas: contiene todos los elementos que se visualizará en este escenario.
 
 - Este Canvas escala con el tamaño de la pantalla, en el componente Canvas Scaler, se selecciona en UI Scale Module el Scale With Screen Size.
 - MenuInicioScript
+  - Recibe el SpriteRender de la Imagen para cambiar al personaje.
+  - Recibe el Texto para diferenciar al personaje.
   - Se agrega todas las acciones que tendrán los botones, cambiar de escena y mostras u ocultar menu.
+  - Realizamos la lógica para seleccionar al personaje, recibe el SpriteRender, Texto y Animator.
 - MenuInicial
   - Background: imagen
   - Personaje: sprite
@@ -33,5 +36,13 @@ Canvas: contiene todos los elementos que se visualizará en este escenario.
   - Se reduce a 0 el Alpha del color de fondo, en este caso de la imagen.
   - Se agregan los personajes
   - Se agrega un fondo, independiente del canvas.
+  - Script
+    - Se crea Personajes para que se visualice en el Unity y sirva para pasar los datos del personaje: el objeto(prefab), imagen y nombre.
+    - Se crea AdministradorPersonajesScript que se encarga de hacer la lógica de selección de personaje y pasarlo a la otra escena. Recibe los personajes en una lista.
+  - Se crea la animación de los personajes.
+  - Se crean los prefabs de los personajes.
+  - Se crea el nuevo objeto Personaje dentro de la carpeta SeleccionPersonaje para pasarle todos los datos del personaje (prefab, imagen y nombre).
+  - Pasamos el nuevo objeto Personaje a la lista del script de AdministradorPersonajesScript.
+  - Eliminamos la imagen de referencia del GameObject donde se visualizarán el personaje seleccionado.
 
 > Nota: Para agregar las nuevas escenas al juego, hay que dirigirse a: File>Build Settings y arrastramos las escenas que faltan, al lado derecho de los nombres de las escenas, indica el número por orden.
