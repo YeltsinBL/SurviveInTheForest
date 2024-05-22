@@ -8,6 +8,30 @@ El personaje tendrá que enfrentarse a diferentes enemigos para lograr pasar el 
 
 Se detallará todos los pasos realizados en las diferentes escenas.
 
+### Escena de Carga
+
+AdministradorCarga: es un GameObject vacio que solo contiene el script AdministradorCargaScript que hace la carga del Slider.
+
+- AdministradorCargaScript
+  - Recibe el índice de la escena a mostrar, por defecto es la escena del Menú Principal con índice 1.
+  - Recibe la referencia del Slider.
+  - En el método Start se utiliza el método que inicia la carga de la escena Asincronamente, por lo cual, se tiene que hacer dentro de una Corrutina, en este caso StartCoroutine.
+  -El método LoadAsyncScene, realiza la carga del Slider y dependiendo se se ha cargado todo el Slider, activará la nueva escena.
+
+Canvas: contiene todos los elementos que se visualizará en este escenario.
+
+- Este Canvas escala con el tamaño de la pantalla, en el componente Canvas Scaler, se selecciona en UI Scale Module el Scale With Screen Size.
+  - La imagen de fondo.
+  - Los personajes.
+  - El Slider
+    - La interacción será Falso.
+    - Desactivar la transición.
+    - Desactivar la navegación.
+    - Agregar un texto Cargando.
+    - Modificar el Fill, para cambiar el color de carga.
+    - Eliminar el Handle Slide Area.
+    - Ajustar el tamaño del Fill Area, para que cobra todo el espacio del Slider.
+
 ### Menú Inicio
 
 Canvas: contiene todos los elementos que se visualizará en este escenario.
