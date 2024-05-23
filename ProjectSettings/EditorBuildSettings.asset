@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/EscenaCargando.unity
     guid: 512908b7929d0c7459ce6764fa4a2a1d
   - enabled: 1
-    path: Assets/Scenes/InitialMenuScene.unity
+    path: Assets/Scenes/EscenaPrincipal.unity
     guid: 59fb84bbc52e1534ca750047292ead91
   - enabled: 1
     path: Assets/Scenes/FirstScene.unity
