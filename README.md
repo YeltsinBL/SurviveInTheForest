@@ -68,6 +68,23 @@ Canvas: contiene todos los elementos que se visualizará en este escenario.
   - Se crea el nuevo objeto Personaje dentro de la carpeta SeleccionPersonaje para pasarle todos los datos del personaje (prefab, imagen y nombre).
   - Pasamos el nuevo objeto Personaje a la lista del script de AdministradorPersonajesScript.
   - Eliminamos la imagen de referencia del GameObject donde se visualizarán el personaje seleccionado.
+- Menu Audio
+  - Crear una clase Serializable SonidoScript, que contiene el nombre y audio a reproducir.
+  - Crear el script AdministradorAudioScript
+    - Recibe como array los audios para la música y efectos, usando la clase SonidoScript.
+    - Recibe los AudioSource independientes para la música y efectos.
+    - Recibe los GameObject del slider de la música y efectos.
+    - Recibe los valores iniciales de los sliders.
+    - Recibe los GameObject de los botones de la música y efectos.
+    - Recibe los GameObject los textos de los botones de la música y efectos.
+    - Se hace una instancia del mismo scriplt.
+    - En el método Start
+      - Obtenemos los valores guardados en el PlayerPrefs de los Slider o se les asigan el valor inicial asignado.
+      - Reproduce el la música de fondo.
+    - En el método Awake, verificamos la instancia.
+    - En la región Reproducir, se realiza la lógica para reproducir el audio de la música y efectos.
+    - En la región Volumen, se realiza la lógica para aumentar o disminuir el audio de la música y efectos.
+    - En la región Mutear, se realiza la lógica para activar o cancelar el audio de la música y efectos.
 
 > Nota: Para agregar las nuevas escenas al juego, hay que dirigirse a: File>Build Settings y arrastramos las escenas que faltan, al lado derecho de los nombres de las escenas, indica el número por orden.
 
