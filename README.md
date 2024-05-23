@@ -85,6 +85,24 @@ Canvas: contiene todos los elementos que se visualizará en este escenario.
     - En la región Reproducir, se realiza la lógica para reproducir el audio de la música y efectos.
     - En la región Volumen, se realiza la lógica para aumentar o disminuir el audio de la música y efectos.
     - En la región Mutear, se realiza la lógica para activar o cancelar el audio de la música y efectos.
+- Menu Nivel
+  - Carrusel del Imágenes
+    - Se agrega un panel, el cual contendrá un ScrollView. En el ScrollView, en la parte de Viewport, se agrega otro panel, que contendrá imagénes, en este caso son 3, que representan una demo del fondo de las escenas por nivel.
+    - Dentro del ScrollView, se agrega otro GameObject vacio, el cual contendrá una imagen que representará las cantidades de escenas a mostrar, esta imagen luego se convierte en prefabs.
+  - Botones: avanzar, retroceder, jugar y volver (a la menú inicial).
+  - Se crea un GameObject vacio AdministradorNivel, que contiene el script que hará funcionar al Carrusel, AdministradorNivelScript.
+    - Todo el código para esta acción, es obtenido desde el canal de [`Unity Vista`][Unity_Vista] en Youtube.
+  - AdministradorNivelScript, recibe:
+    - La imagen inicial de la primera escena.
+    - La lista de las imágenes (background) de todas las escenas.
+    - El GameObject donde se agregarán los prefabs para indicar la cantidad de escenas.
+    - El prefabs que indica la escena.
+    - Los botones para avanzar y retroceder escena.
+    - Las configuraciones para el movimiento de las imágenes de la escena
+      - Si se mueve automáticamente.
+      - Si despues de llegar a la ultima imagen, continúa a la imagen inicial o hay que retrocerde uno a uno.
+      - El tiempo del movimiento.
+    - El ScrollView para verificar si se avanza de imagen desplazando por encima de la misma.
 
 > Nota: Para agregar las nuevas escenas al juego, hay que dirigirse a: File>Build Settings y arrastramos las escenas que faltan, al lado derecho de los nombres de las escenas, indica el número por orden.
 
@@ -92,3 +110,7 @@ Canvas: contiene todos los elementos que se visualizará en este escenario.
 
 - Se agrega un nuevo Object vacio, que servirá para agregar el personaje seleccionado.
 - Se copia el Object AdministradorPersonaje, para que cargue directamente el personaje seleccionado, sino se muestra la escena inicial.
+
+[//]: # (Enlaces a la documentación)
+
+[Unity_Vista]: <https://www.youtube.com/watch?v=OEcpoDjSiCw>
