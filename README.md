@@ -103,6 +103,15 @@ Canvas: contiene todos los elementos que se visualizará en este escenario.
       - Si despues de llegar a la ultima imagen, continúa a la imagen inicial o hay que retrocerde uno a uno.
       - El tiempo del movimiento.
     - El ScrollView para verificar si se avanza de imagen desplazando por encima de la misma.
+  - Desbloquear Niveles
+    - Se agrega un GameObject Imagen y un texto dentro, esto indica la imagen del candadoy el texto bloqueado.
+  - AdministradorNivelScript, se agrega:
+    - El GameObject de la Imagen.
+    - El GemeObject del Boton Jugar.
+    - En el método EstadoNiveles, se activan las escenas ya disponibles.
+    - En el método DesbloquearNiveles, se activa la siguiente escena.
+    - En el método MostrarImagenBloqueado, se activa o desactivca el candado que indica la escena bloqueada.
+    - El método SeleccionarNivel, selecciona la última escena visualizada en el carrusel.
 
 > Nota: Para agregar las nuevas escenas al juego, hay que dirigirse a: File>Build Settings y arrastramos las escenas que faltan, al lado derecho de los nombres de las escenas, indica el número por orden.
 

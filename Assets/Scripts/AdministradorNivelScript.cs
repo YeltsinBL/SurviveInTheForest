@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,6 +31,12 @@ public class AdministradorNivelScript : MonoBehaviour
     // Reference to the RectTransform of the ScrollView
     public RectTransform contentArea;
 
+    [Header("Desbloquear Nivel")]
+
+    [SerializeField] private GameObject ImagenBloqueado;
+    [SerializeField] private GameObject BotonJugar;
+    //[SerializeField] private Button BotonJugar;
+
     void Start()
     {
         nextButton.onClick.AddListener(NextContent);
@@ -46,6 +54,8 @@ public class AdministradorNivelScript : MonoBehaviour
             timer = autoMoveTime;
             InvokeRepeating("AutoMoveContent", 1f, 1f); // Invoke every second to update the timer
         }
+        //PlayerPrefs.SetInt("NivelesDesbloqueados",2);
+        EstadoNiveles();
     }
     void Update()
     {
@@ -185,6 +195,7 @@ public class AdministradorNivelScript : MonoBehaviour
                 dotImage.fillAmount = 0f;
             }
         }
+        MostrarImagenBloqueado();
     }
 
     public void SetCurrentIndex(int newIndex)
@@ -197,6 +208,50 @@ public class AdministradorNivelScript : MonoBehaviour
         }
     }
 
+# endregion
+
+# region Desbloquear Niveles
+
+/// <summary>
+/// Activar los niveles que ya han sido desbloqueados o activar el primero por defecto
+/// </summary>
+    private void EstadoNiveles(){
+        if(contentPanels.Count >0){
+            if(PlayerPrefs.GetInt("NivelesDesbloqueados")==0) PlayerPrefs.SetInt("NivelesDesbloqueados",1);
+            for (int i = 0; i < contentPanels.Count; i++)
+                contentPanels[i].GetComponent<Image>().color = new Color32(123,105,105,244);
+            
+            for (int i = 0; i < PlayerPrefs.GetInt("NivelesDesbloqueados"); i++)
+                contentPanels[i].GetComponent<Image>().color = new Color32(255,255,255,255);
+            
+        }
+    }
+
+
+/// <summary>
+/// Mostrar el candado de bloqueado y ocultar el botón jugar
+/// </summary>
+    private void MostrarImagenBloqueado(){
+        Debug.Log(currentIndex+1 > PlayerPrefs.GetInt("NivelesDesbloqueados"));
+        if (currentIndex+1 > PlayerPrefs.GetInt("NivelesDesbloqueados")){
+            ImagenBloqueado.SetActive(true);
+            BotonJugar.SetActive(false);
+            //BotonJugar.interactable = false;
+        }
+        else {
+            ImagenBloqueado.SetActive(false);
+            BotonJugar.SetActive(true);
+            //BotonJugar.interactable=true;
+        }
+        SeleccionarNivel();
+    }
+/// <summary>
+/// 
+/// </summary>
+    private void SeleccionarNivel(){
+        if(!ImagenBloqueado.activeSelf)
+            PlayerPrefs.SetInt("EscenaIndex", currentIndex);
+    }
 # endregion
 
 }

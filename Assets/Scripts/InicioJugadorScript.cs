@@ -9,6 +9,7 @@ public class InicioJugadorScript : MonoBehaviour
         int indexJugador = PlayerPrefs.GetInt("JugadorIndex");
         GameObject nuevoObject = Instantiate(AdministradorPersonajesScript.Instance.personajes[indexJugador].gameObject, transform.position, Quaternion.identity);
         nuevoObject.transform.localScale = new Vector3(4.6f, 6.3f, 0.1f);
+        Debug.Log("EscenaSeleccionada: "+ PlayerPrefs.GetInt("EscenaIndex"));
     }
 
 }

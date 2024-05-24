@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/EscenaPrincipal.unity
     guid: 59fb84bbc52e1534ca750047292ead91
   - enabled: 1
-    path: Assets/Scenes/FirstScene.unity
+    path: Assets/Scenes/EscenaUno.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/EscenaDos.unity
+    guid: 9b41adeacbd24304fafad860d7f320e1
+  - enabled: 1
+    path: Assets/Scenes/EscenaTres.unity
+    guid: aed3bfd086084d74db0e5e8ba207fdcc
   m_configObjects: {}
