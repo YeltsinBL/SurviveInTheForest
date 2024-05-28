@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bf077b03c4d3b7740aebe91112d97ef3
+guid: f0c729ee640af594fa551154ed1e1dde
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,169 +110,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Personaje1-Corriendo_0
+      name: Run_0
       rect:
         serializedVersion: 2
         x: 28
-        y: 13
-        width: 32
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c0f16b7b15aef9547bac83dd85d801cc
-      internalID: 1214324382
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Personaje1-Corriendo_1
-      rect:
-        serializedVersion: 2
-        x: 106
-        y: 14
+        y: 93
         width: 34
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68c2e36206ab4c146a3856ea3d550784
-      internalID: 1056307043
+      spriteID: a914d42d193c34e4193eded70dc7e78d
+      internalID: -598286802
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Personaje1-Corriendo_2
+      name: Run_1
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 94
+        width: 34
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d98c5dd7e4e308a428b53447cdab56c3
+      internalID: 26180201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_2
       rect:
         serializedVersion: 2
         x: 190
-        y: 12
-        width: 30
-        height: 51
+        y: 92
+        width: 34
+        height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c756ba95f2beec2459072f288e9a1a29
-      internalID: -1356389630
+      spriteID: e5fb16f612ea6bf42a342a76d470830b
+      internalID: 167148296
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Personaje1-Corriendo_3
+      name: Run_3
       rect:
         serializedVersion: 2
         x: 272
-        y: 13
-        width: 28
-        height: 51
+        y: 93
+        width: 34
+        height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c99761676f4e3ca4a9d2c1f58612acd5
-      internalID: -537253824
+      spriteID: 658ab53423bb1d74e88b18c09575f9cb
+      internalID: 1494017811
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Personaje1-Corriendo_4
+      name: Run_4
       rect:
         serializedVersion: 2
         x: 348
-        y: 14
-        width: 32
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3a40bc08b0767fb418360fa638f2c47c
-      internalID: -98048710
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Personaje1-Corriendo_5
-      rect:
-        serializedVersion: 2
-        x: 428
-        y: 15
-        width: 32
+        y: 94
+        width: 34
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce3844a6cc6f36f42a9f57b53a668f77
-      internalID: 556808201
+      spriteID: 353d3e2160d3d5d49873f516e70f8958
+      internalID: -972279526
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Personaje1-Corriendo_6
+      name: Run_5
       rect:
         serializedVersion: 2
-        x: 512
+        x: 28
+        y: 15
+        width: 34
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 042768cd22587ae4e8043e4831d5c8d8
+      internalID: 1704352759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_6
+      rect:
+        serializedVersion: 2
+        x: 112
         y: 12
-        width: 29
-        height: 52
+        width: 34
+        height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e86f4b7b415a9c4fab76aa69bf7a81c
-      internalID: -1237262348
+      spriteID: 2bda00b68923acb4babcb73ee1a59e57
+      internalID: -826344621
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Personaje1-Corriendo_7
+      name: Run_7
       rect:
         serializedVersion: 2
-        x: 591
+        x: 191
         y: 13
-        width: 30
-        height: 51
+        width: 34
+        height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f61a8c47b79c93b47ba0761c3206be80
-      internalID: -1742697696
+      spriteID: c2a9edc6bcbdc5f478513ed0d094b4a8
+      internalID: -1266222319
       vertices: []
       indices: 
       edges: []
@@ -288,14 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Personaje1-Corriendo_0: 1214324382
-      Personaje1-Corriendo_1: 1056307043
-      Personaje1-Corriendo_2: -1356389630
-      Personaje1-Corriendo_3: -537253824
-      Personaje1-Corriendo_4: -98048710
-      Personaje1-Corriendo_5: 556808201
-      Personaje1-Corriendo_6: -1237262348
-      Personaje1-Corriendo_7: -1742697696
+      Run_0: -598286802
+      Run_1: 26180201
+      Run_2: 167148296
+      Run_3: 1494017811
+      Run_4: -972279526
+      Run_5: 1704352759
+      Run_6: -826344621
+      Run_7: -1266222319
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

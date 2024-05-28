@@ -2822,8 +2822,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2277272043786e44494e6c38d4527b91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sliderMusica: {fileID: 722651776}
-  valorSliderMusica: 0.3
 --- !u!114 &879609606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4236,7 +4234,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

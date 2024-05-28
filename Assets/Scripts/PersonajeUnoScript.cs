@@ -29,7 +29,10 @@ public class PersonajeUnoScript : MonoBehaviour
 
         // Activar la animación corriendo
         animator.SetBool("Running", horizontal !=0.0f);
-
+        if(animator.GetBool("Running")){
+            //gameObject.GetComponent<SpriteRenderer>().scale
+            gameObject.transform.localScale = new Vector3(2.3f, 2.3f, 0.1f);
+        }
         // Verificar si está en el suelo
         Debug.DrawRay(transform.position, Vector3.down * 0.09f, Color.red);
         if(Physics2D.Raycast(transform.position, Vector3.down, 0.09f)) grounded=true;
