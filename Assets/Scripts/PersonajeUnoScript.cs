@@ -23,19 +23,16 @@ public class PersonajeUnoScript : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
 
-        // cambiar la mira del personaje (izquierda-derecha)
-        if(horizontal < 0.0f) transform.localScale = new Vector3(-1,1,1.0f);
-        else if(horizontal > 0.0f) transform.localScale = new Vector3(1,1,1.0f);
-
         // Activar la animación corriendo
         animator.SetBool("Running", horizontal !=0.0f);
         if(animator.GetBool("Running")){
-            //gameObject.GetComponent<SpriteRenderer>().scale
-            gameObject.transform.localScale = new Vector3(2.3f, 2.3f, 0.1f);
+            // cambiar la mira del personaje (izquierda-derecha)
+            if(horizontal < 0.0f) transform.localScale = new Vector3(-2.3f, 2.3f, 0.1f);
+            else if(horizontal > 0.0f) transform.localScale = new Vector3(2.3f, 2.3f, 0.1f);
         }
         // Verificar si está en el suelo
-        Debug.DrawRay(transform.position, Vector3.down * 0.09f, Color.red);
-        if(Physics2D.Raycast(transform.position, Vector3.down, 0.09f)) grounded=true;
+        Debug.DrawRay(transform.position, Vector3.down * 0.6f, Color.red);
+        if(Physics2D.Raycast(transform.position, Vector3.down, 0.6f)) grounded=true;
         else grounded=false;
 
         // agregar la tecla espacio para saltar
