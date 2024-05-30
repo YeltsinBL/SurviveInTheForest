@@ -31,12 +31,24 @@ public class PersonajeVidaScript : MonoBehaviour
 
         cambioVida.Invoke(vidaActual);
 
-        if(vidaActual <=0) Destroy(gameObject);
+        if(vidaActual <=0) {
+            Destroy(gameObject);
+            UnityEditor.EditorApplication.isPlaying=false;
+            Application.Quit();
+        }
     }
     public void CurarVida(int cantidadCuracion){
         int vidaTemporal = vidaActual + cantidadCuracion;
         if (vidaTemporal > vidaMaxima) vidaActual = vidaMaxima;
         else vidaActual = vidaTemporal;
         cambioVida.Invoke(vidaActual);
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        // Chocar con el hongo
+        EnemigoScript hongoEnemigo = other.collider.GetComponent<EnemigoScript>();
+        if(hongoEnemigo != null) {
+            TomarDanio(1);
+        }
     }
 }
