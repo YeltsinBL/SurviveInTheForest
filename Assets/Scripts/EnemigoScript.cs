@@ -28,4 +28,9 @@ public class EnemigoScript : MonoBehaviour
         Destroy(gameObject);
         //animator.SetTrigger("Muerte");
     }
+    private void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.CompareTag("Player")) {
+            other.gameObject.GetComponent<PersonajeVidaScript>().TomarDanio(1);
+        }
+    }
 }

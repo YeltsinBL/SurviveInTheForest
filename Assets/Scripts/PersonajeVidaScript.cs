@@ -11,9 +11,13 @@ public class PersonajeVidaScript : MonoBehaviour
     public UnityEvent<int> cambioVida;
     public int valorPrueba;
 
+    private Animator animator;
     public event EventHandler MuerteJugador;
+    private new Rigidbody2D rigidbody2D;
 
     private void Start() {
+        animator = GetComponent<Animator>();
+        rigidbody2D = GetComponent<Rigidbody2D>();
         vidaActual = vidaMaxima;
         cambioVida.Invoke(vidaActual); // invocar este evento cada vez que la vida cambia
         Debug.Log("vidaMaxima: "+vidaMaxima);
@@ -35,10 +39,11 @@ public class PersonajeVidaScript : MonoBehaviour
         cambioVida.Invoke(vidaActual);
 
         if(vidaActual <=0) {
-            MuerteJugador?.Invoke(this, EventArgs.Empty);
-            Destroy(gameObject);
-            //UnityEditor.EditorApplication.isPlaying=false;
-            //Application.Quit();
+            // Para que el personaje no se mueva después de morir
+            rigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
+            animator.SetTrigger("Muerte");
+            // Ignorar las colisiones
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Jugador"),LayerMask.NameToLayer("Enemigos"),true);
         }
     }
     public void CurarVida(int cantidadCuracion){
@@ -48,11 +53,6 @@ public class PersonajeVidaScript : MonoBehaviour
         cambioVida.Invoke(vidaActual);
     }
 
-    private void OnCollisionEnter2D(Collision2D other) {
-        // Chocar con el hongo
-        EnemigoScript hongoEnemigo = other.collider.GetComponent<EnemigoScript>();
-        if(hongoEnemigo != null) {
-            TomarDanio(1);
-        }
-    }
+    public void Destruir() =>Destroy(gameObject);
+    public void MuerteJugadorEvento()=>MuerteJugador?.Invoke(this, EventArgs.Empty);
 }

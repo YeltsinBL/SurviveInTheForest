@@ -2284,7 +2284,7 @@ GameObject:
   - component: {fileID: 521166154}
   - component: {fileID: 521166155}
   - component: {fileID: 521166156}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AvispaEnemiga
   m_TagString: Enemigo
   m_Icon: {fileID: 0}
@@ -2771,11 +2771,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1446605662490916503, guid: 89ea2935bebde7a44b7a5e853dc9904e, type: 3}
       propertyPath: radioGolpe
-      value: 1
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 2315102813196697652, guid: 89ea2935bebde7a44b7a5e853dc9904e, type: 3}
       propertyPath: m_Name
       value: Personaje1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2315102813196697652, guid: 89ea2935bebde7a44b7a5e853dc9904e, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2315102813196697652, guid: 89ea2935bebde7a44b7a5e853dc9904e, type: 3}
       propertyPath: m_TagString
@@ -2783,11 +2787,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7462876133468909544, guid: 89ea2935bebde7a44b7a5e853dc9904e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.008
+      value: -0.049
       objectReference: {fileID: 0}
     - target: {fileID: 7462876133468909544, guid: 89ea2935bebde7a44b7a5e853dc9904e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.124
+      value: 0.019
       objectReference: {fileID: 0}
     - target: {fileID: 7965665547545900146, guid: 89ea2935bebde7a44b7a5e853dc9904e, type: 3}
       propertyPath: cambioVida.m_PersistentCalls.m_Calls.Array.size
@@ -3041,7 +3045,7 @@ GameObject:
   - component: {fileID: 1157264509}
   - component: {fileID: 1157264508}
   - component: {fileID: 1157264514}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RataEnemiga
   m_TagString: Enemigo
   m_Icon: {fileID: 0}

@@ -21,6 +21,7 @@ public class MenuPerdisteScript : MonoBehaviour
     }
 
     public void Reiniciar(){
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Jugador"),LayerMask.NameToLayer("Enemigos"),false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void MenuInicial(string nombre){
