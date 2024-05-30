@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemigoScript : MonoBehaviour
 {
     [SerializeField] private float vida;
-    private Animator animator;
+    //private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +25,7 @@ public class EnemigoScript : MonoBehaviour
         }
     }
     private void Muerte(){
-        animator.SetTrigger("Muerte");
+        Destroy(gameObject);
+        //animator.SetTrigger("Muerte");
     }
 }
