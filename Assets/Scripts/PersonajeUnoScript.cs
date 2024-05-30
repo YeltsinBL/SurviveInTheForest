@@ -16,17 +16,27 @@ public class PersonajeUnoScript : MonoBehaviour
     [SerializeField] private int saltosExtrasRestantes;
     [SerializeField] private int saltosExtras;
 
+    [Header("Escalar")]
+    private float vertical;// subir
+    [SerializeField] private float velocidadEscalar;
+    private BoxCollider2D boxCollider2D;
+    private float gravedadInicial;
+    private bool escalando;
+
     // Start is called before the first frame update
     void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        boxCollider2D = GetComponent<BoxCollider2D>();
+        gravedadInicial = rigidbody2D.gravityScale;
     }
 
     // Update is called once per frame
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
 
         // cambiar la mira del personaje (izquierda-derecha)
         if(horizontal < 0.0f && !mirandoDerecha) Girar();
@@ -53,6 +63,7 @@ public class PersonajeUnoScript : MonoBehaviour
     private void FixedUpdate() {
         rigidbody2D.velocity = new Vector2(horizontal * speed, rigidbody2D.velocity.y);
         Movimiento(salto);
+        Escalar();
         salto = false;
     }
 
@@ -81,5 +92,23 @@ public class PersonajeUnoScript : MonoBehaviour
         Vector3 escala = transform.localScale;
         escala.x *=-1;
         transform.localScale = escala;
+    }
+
+    // Escalar
+    private void Escalar(){
+        if((vertical !=0 || escalando) && boxCollider2D.IsTouchingLayers(LayerMask.GetMask("Escaleras"))){
+            Vector2 velocidadSubida = new Vector2(rigidbody2D.velocity.x, vertical * velocidadEscalar);
+            rigidbody2D.velocity = velocidadSubida;
+            rigidbody2D.gravityScale=0;
+            escalando = true;
+        }else{
+            rigidbody2D.gravityScale = gravedadInicial;
+            escalando = false;
+        }
+
+        if(grounded){
+            escalando = false;
+
+        }
     }
 }
