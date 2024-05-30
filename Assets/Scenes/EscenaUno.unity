@@ -242,6 +242,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 650e4bec732b33a45b8c201c209aa3b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &24167821 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3468806333044364636, guid: 89ea2935bebde7a44b7a5e853dc9904e, type: 3}
+  m_PrefabInstance: {fileID: 682033520}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &51515988
 GameObject:
   m_ObjectHideFlags: 0
@@ -2454,7 +2459,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.513332, y: -9.4, z: -10}
+  m_LocalPosition: {x: 20.513332, y: -9.5199995, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2918,7 +2923,7 @@ Transform:
   m_GameObject: {fileID: 606053679}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.513332, y: -9.4, z: -10}
+  m_LocalPosition: {x: 20.513332, y: -9.5199995, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2990,6 +2995,26 @@ PrefabInstance:
       propertyPath: jumpForce
       value: 250
       objectReference: {fileID: 0}
+    - target: {fileID: 872334546078821211, guid: 89ea2935bebde7a44b7a5e853dc9904e, type: 3}
+      propertyPath: saltosExtras
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 872334546078821211, guid: 89ea2935bebde7a44b7a5e853dc9904e, type: 3}
+      propertyPath: controladorSuelo
+      value: 
+      objectReference: {fileID: 24167821}
+    - target: {fileID: 872334546078821211, guid: 89ea2935bebde7a44b7a5e853dc9904e, type: 3}
+      propertyPath: dimensionesCaja.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 872334546078821211, guid: 89ea2935bebde7a44b7a5e853dc9904e, type: 3}
+      propertyPath: dimensionesCaja.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 872334546078821211, guid: 89ea2935bebde7a44b7a5e853dc9904e, type: 3}
+      propertyPath: queEsSuelo.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1446605662490916503, guid: 89ea2935bebde7a44b7a5e853dc9904e, type: 3}
       propertyPath: danioGolpe
       value: 1
@@ -3048,7 +3073,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8034700247782694201, guid: 89ea2935bebde7a44b7a5e853dc9904e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10
+      value: -10.12
       objectReference: {fileID: 0}
     - target: {fileID: 8034700247782694201, guid: 89ea2935bebde7a44b7a5e853dc9904e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5109,7 +5134,7 @@ GameObject:
   - component: {fileID: 1940901224}
   - component: {fileID: 1940901223}
   - component: {fileID: 1940901222}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Suelo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
