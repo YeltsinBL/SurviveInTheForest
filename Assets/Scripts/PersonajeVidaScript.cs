@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using System;
 
 public class PersonajeVidaScript : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class PersonajeVidaScript : MonoBehaviour
 
     public UnityEvent<int> cambioVida;
     public int valorPrueba;
+
+    public event EventHandler MuerteJugador;
 
     private void Start() {
         vidaActual = vidaMaxima;
@@ -32,9 +35,10 @@ public class PersonajeVidaScript : MonoBehaviour
         cambioVida.Invoke(vidaActual);
 
         if(vidaActual <=0) {
+            MuerteJugador?.Invoke(this, EventArgs.Empty);
             Destroy(gameObject);
-            UnityEditor.EditorApplication.isPlaying=false;
-            Application.Quit();
+            //UnityEditor.EditorApplication.isPlaying=false;
+            //Application.Quit();
         }
     }
     public void CurarVida(int cantidadCuracion){
