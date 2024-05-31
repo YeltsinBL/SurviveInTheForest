@@ -36,6 +36,9 @@ public class PersonajeUnoAtaqueScript : MonoBehaviour
             if(collider.CompareTag("Enemigo")){
                 collider.transform.GetComponent<EnemigoScript>().TomarDanio(danioGolpe);
             }
+            if(collider.CompareTag("Basura")){
+                collider.transform.GetComponent<BasurasScript>().Eliminar();
+            }
         }
     }
     // Dibujar el circulo que será el área del golpe
