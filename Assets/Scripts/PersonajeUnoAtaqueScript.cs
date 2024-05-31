@@ -15,6 +15,10 @@ public class PersonajeUnoAtaqueScript : MonoBehaviour
     [SerializeField] private float tiempoSiguienteAtaque;
     private Animator animator;
     
+    [SerializeField] private float cantidadPuntosResiduo;
+    [SerializeField] private float cantidadPuntosEnemigo;
+    [SerializeField] private RecuentoScript recuentoScript;
+
     private void Start() {
         animator = GetComponent<Animator>();
     }
@@ -35,9 +39,13 @@ public class PersonajeUnoAtaqueScript : MonoBehaviour
         foreach(Collider2D collider in objetos){
             if(collider.CompareTag("Enemigo")){
                 collider.transform.GetComponent<EnemigoScript>().TomarDanio(danioGolpe);
+                recuentoScript.SumarPuntos(cantidadPuntosEnemigo);
+                recuentoScript.RestarEnemigos();
             }
             if(collider.CompareTag("Basura")){
                 collider.transform.GetComponent<BasurasScript>().Eliminar();
+                recuentoScript.SumarPuntos(cantidadPuntosResiduo);
+                recuentoScript.RestarResiduos();
             }
         }
     }
