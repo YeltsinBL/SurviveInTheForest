@@ -7,6 +7,10 @@ public class PersonajeUnoScript : MonoBehaviour
 {
     private new Rigidbody2D rigidbody2D;
     private Animator animator;
+    public bool sePuedeMover =true;
+    [SerializeField] private Vector2 velocidadRebote;
+
+    [Header("Saltos")]
     private float horizontal;// caminar
     public float speed; // velocidad
     public float jumpForce; // fuerza para saltar
@@ -62,7 +66,7 @@ public class PersonajeUnoScript : MonoBehaviour
     // Mover al personaje
     private void FixedUpdate() {
         rigidbody2D.velocity = new Vector2(horizontal * speed, rigidbody2D.velocity.y);
-        Movimiento(salto);
+        if(sePuedeMover) Movimiento(salto);
         Escalar();
         salto = false;
     }
@@ -92,6 +96,12 @@ public class PersonajeUnoScript : MonoBehaviour
         Vector3 escala = transform.localScale;
         escala.x *=-1;
         transform.localScale = escala;
+    }
+
+    public void Rebote(Vector2 puntoGolpe){
+        Debug.Log("rigidbody2D.velocity:" +rigidbody2D.velocity);
+        rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x+(-velocidadRebote.x*puntoGolpe.x),velocidadRebote.y);
+        Debug.Log("rigidbody2D.velocity2:" +rigidbody2D.velocity);
     }
 
     // Escalar

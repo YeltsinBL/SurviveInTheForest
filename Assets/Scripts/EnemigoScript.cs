@@ -30,7 +30,8 @@ public class EnemigoScript : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.CompareTag("Player")) {
-            other.gameObject.GetComponent<PersonajeVidaScript>().TomarDanio(1);
+            Debug.Log("Veces");
+            other.gameObject.GetComponent<PersonajeVidaScript>().TomarDanio(1,other.GetContact(0).normal);
         }
     }
 }

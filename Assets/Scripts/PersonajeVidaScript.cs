@@ -15,7 +15,11 @@ public class PersonajeVidaScript : MonoBehaviour
     public event EventHandler MuerteJugador;
     private new Rigidbody2D rigidbody2D;
 
+    private PersonajeUnoScript personajeUnoScript;
+    [SerializeField] private float tiempoPerdidaControl;
     private void Start() {
+        personajeUnoScript = GetComponent<PersonajeUnoScript>();
+
         animator = GetComponent<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();
         vidaActual = vidaMaxima;
@@ -45,6 +49,21 @@ public class PersonajeVidaScript : MonoBehaviour
             // Ignorar las colisiones
             Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Jugador"),LayerMask.NameToLayer("Enemigos"),true);
         }
+    }
+    public void TomarDanio(int danio, Vector2 posicion){
+        //vidaActual -=danio;
+        TomarDanio(danio);
+        //animator.SetTrigger("Golpe");
+        StartCoroutine(PerderControl());
+        //Perder Control
+        Debug.Log("posicion: "+posicion);
+        personajeUnoScript.Rebote(posicion);
+
+    }
+    private IEnumerator PerderControl(){
+        personajeUnoScript.sePuedeMover = false;
+        yield return new WaitForSeconds(tiempoPerdidaControl);
+        personajeUnoScript.sePuedeMover = true;
     }
     public void CurarVida(int cantidadCuracion){
         int vidaTemporal = vidaActual + cantidadCuracion;
