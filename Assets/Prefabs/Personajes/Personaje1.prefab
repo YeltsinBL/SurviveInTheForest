@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 7965665547545900146}
   m_Layer: 0
   m_Name: Personaje1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -228,15 +228,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 591069dcffd88b942a679cff2252617e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sePuedeMover: 1
+  velocidadRebote: {x: 50, y: 50}
   speed: 1.5
-  jumpForce: 180
-  queEsSuelo:
-    serializedVersion: 2
-    m_Bits: 0
-  controladorSuelo: {fileID: 0}
-  dimensionesCaja: {x: 0, y: 0, z: 0}
+  jumpForce: 250
   saltosExtrasRestantes: 0
-  saltosExtras: 0
+  saltosExtras: 1
+  velocidadEscalar: 5
 --- !u!114 &1446605662490916503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,10 +248,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controladorAtaque: {fileID: 7462876133468909544}
-  radioGolpe: 0.2
-  danioGolpe: 0
+  radioGolpe: 0.9
+  danioGolpe: 1
   tiempoEntreAtaque: 1
   tiempoSiguienteAtaque: 0
+  cantidadPuntosResiduo: 2
+  cantidadPuntosEnemigo: 5
+  recuentoScript: {fileID: 0}
 --- !u!114 &7965665547545900146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,8 +271,21 @@ MonoBehaviour:
   vidaMaxima: 3
   cambioVida:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   valorPrueba: 1
+  tiempoPerdidaControl: 1
 --- !u!1 &6955082487470004708
 GameObject:
   m_ObjectHideFlags: 0
