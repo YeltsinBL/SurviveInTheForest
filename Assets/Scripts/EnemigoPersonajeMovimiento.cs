@@ -23,6 +23,12 @@ public class EnemigoPersonajeMovimiento : MonoBehaviour
     public GameObject target;
     public bool atacar;
     public float rango_vision;
+    public float rango_ataque;
+    public float velocidadMovimientoAumentada;
+    public GameObject rango;
+    public GameObject Hit;
+    public BoxCollider2D boxCollider2DIdle;
+    public BoxCollider2D boxCollider2DAtacar;
 
     void Start()
     {
@@ -46,8 +52,7 @@ public class EnemigoPersonajeMovimiento : MonoBehaviour
         Gizmos.DrawLine(controladorEnFrente.transform.position, controladorEnFrente.transform.position + transform.right * distanciaEnFrente);
     }
     public void Comportamiento(){
-
-        if(Mathf.Abs(transform.position.x - target.transform.position.x) > rango_vision && !atacar){
+        if(target == null || (Mathf.Abs(transform.position.x - target.transform.position.x) > rango_vision && !atacar)){
             // Caminar
 
             cronometro +=1 * Time.deltaTime;
@@ -57,6 +62,8 @@ public class EnemigoPersonajeMovimiento : MonoBehaviour
             }
             switch(rutina){
                 case 0:
+                    boxCollider2DIdle.enabled = true;
+                    boxCollider2DAtacar.enabled = false;
                     animator.SetBool("Correr",false);
                     rigidbody.velocity *=0;
                     break;
@@ -64,6 +71,8 @@ public class EnemigoPersonajeMovimiento : MonoBehaviour
                     rutina++;
                     break;
                 default:
+                    boxCollider2DIdle.enabled = true;
+                    boxCollider2DAtacar.enabled = false;
                     rigidbody.velocity = new Vector2(velocidadMovimiento, rigidbody.velocity.y);
                     if(informacionEnFrente || !informacionAbajo) {
                         Girar();
@@ -73,6 +82,40 @@ public class EnemigoPersonajeMovimiento : MonoBehaviour
             }
         } else {
             // Personaje Detectado
+            if(Mathf.Abs(transform.position.x - target.transform.position.x) > rango_ataque && !atacar){
+                // Correr hacia el personaje - derecha o izquierda
+                if(transform.position.x < target.transform.position.x){
+                    animator.SetBool("Correr",true);
+                    transform.Translate(Vector3.right * velocidadMovimientoAumentada * Time.deltaTime);
+                    transform.rotation = Quaternion.Euler(0,0,0);
+                    animator.SetBool("Atacar",false);
+                }else{
+                    animator.SetBool("Correr",true);
+                    transform.Translate(Vector3.right* velocidadMovimientoAumentada*Time.deltaTime);
+                    transform.rotation= Quaternion.Euler(0,180,0);
+                    animator.SetBool("Atacar",false);
+                }
+            }else{
+                // Rango del ataque
+                if(!atacar){
+                    if(transform.position.x < target.transform.position.x){
+                        transform.rotation = Quaternion.Euler(0,0,0);
+                    }else{
+                        transform.rotation = Quaternion.Euler(0,180,0);
+                    }
+                    animator.SetBool("Correr",false);
+                }
+            }
         }
     }
+
+    public void Final_Animacion(){
+        animator.SetBool("Atacar",false);
+        atacar = false;
+        rango.GetComponent<BoxCollider2D>().enabled = true;
+    }
+    public void ColliderWeaponTrue() 
+        => Hit.GetComponent<BoxCollider2D>().enabled = true;
+    public void ColliderWeaponFalse() 
+        => Hit.GetComponent<BoxCollider2D>().enabled = false;
 }

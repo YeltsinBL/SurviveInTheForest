@@ -5,17 +5,11 @@ using UnityEngine;
 public class EnemigoScript : MonoBehaviour
 {
     [SerializeField] private float vida;
-    //private Animator animator;
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-        //animator = GetComponent<Animator>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        animator = GetComponent<Animator>();
     }
 
     public void TomarDanio(float danioGolpe){
@@ -25,13 +19,18 @@ public class EnemigoScript : MonoBehaviour
         }
     }
     private void Muerte(){
-        Destroy(gameObject);
-        //animator.SetTrigger("Muerte");
+        if(animator != null){
+            animator.SetTrigger("Muerte");
+        }else{
+            Destruir();
+        }
     }
-    private void OnCollisionEnter2D(Collision2D other) {
+    
+    public void Destruir() =>Destroy(gameObject);
+    /*private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.CompareTag("Player")) {
             Debug.Log("Veces");
             other.gameObject.GetComponent<PersonajeVidaScript>().TomarDanio(1,other.GetContact(0).normal);
         }
-    }
+    }*/
 }
