@@ -100,7 +100,8 @@ public class PersonajeUnoScript : MonoBehaviour
 
     public void Rebote(Vector2 puntoGolpe){
         Debug.Log("rigidbody2D.velocity:" +rigidbody2D.velocity);
-        rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x+(-velocidadRebote.x*puntoGolpe.x),velocidadRebote.y);
+        rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x+(-velocidadRebote.x*puntoGolpe.x),
+                                        rigidbody2D.velocity.y+(velocidadRebote.y*puntoGolpe.y));
         Debug.Log("rigidbody2D.velocity2:" +rigidbody2D.velocity);
     }
 
