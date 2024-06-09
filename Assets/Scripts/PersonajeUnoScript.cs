@@ -27,6 +27,14 @@ public class PersonajeUnoScript : MonoBehaviour
     private float gravedadInicial;
     private bool escalando;
 
+    [Header("Dash")]
+    [SerializeField] private float velocidadDash;
+    [SerializeField] private float tiempoDash;
+    [SerializeField] private float tiempoEntreDash;
+    private float tiempoSiguienteDash;
+    [SerializeField] private TrailRenderer trailRenderer;
+    private bool puedeHacerDash = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,10 +70,34 @@ public class PersonajeUnoScript : MonoBehaviour
         if(!grounded) animator.SetBool("Jumping",true);
         else animator.SetBool("Jumping",false);
 
+        if(tiempoSiguienteDash >0){
+            tiempoSiguienteDash -= Time.deltaTime;
+        }
+        if(Input.GetKeyDown(KeyCode.B) && puedeHacerDash && tiempoSiguienteDash <=0){
+            Debug.Log("Dash");
+            StartCoroutine(Dash());
+            tiempoSiguienteDash = tiempoEntreDash;
+        }
     }
+
+    private IEnumerator Dash()
+    {
+        sePuedeMover = false;
+        puedeHacerDash = false;
+        rigidbody2D.gravityScale = 0;
+        animator.SetTrigger("Dash");
+        trailRenderer.emitting = true;
+        yield return new WaitForSeconds(tiempoDash);
+
+        sePuedeMover = true;
+        puedeHacerDash = true;
+        rigidbody2D.gravityScale = gravedadInicial;
+        trailRenderer.emitting = false;
+    }
+
     // Mover al personaje
     private void FixedUpdate() {
-        rigidbody2D.velocity = new Vector2(horizontal * speed, rigidbody2D.velocity.y);
+        rigidbody2D.velocity = new Vector2(horizontal * (!puedeHacerDash?velocidadDash:speed), rigidbody2D.velocity.y);
         if(sePuedeMover) Movimiento(salto);
         Escalar();
         salto = false;
@@ -113,7 +145,7 @@ public class PersonajeUnoScript : MonoBehaviour
             rigidbody2D.gravityScale=0;
             escalando = true;
         }else{
-            rigidbody2D.gravityScale = gravedadInicial;
+            rigidbody2D.gravityScale = !puedeHacerDash?0:gravedadInicial ;
             escalando = false;
         }
 
