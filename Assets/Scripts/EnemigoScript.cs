@@ -19,7 +19,16 @@ public class EnemigoScript : MonoBehaviour
         }
     }
     private void Muerte(){
-        if(animator != null){
+        bool existe=false;
+        foreach (AnimatorControllerParameter param in animator.parameters)
+        {
+            if (param.name == "Muerte")
+            {
+                existe=true;
+                break;
+            }
+        }
+        if(existe){
             animator.SetTrigger("Muerte");
         }else{
             Destruir();
