@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875a0eda7a3f0b841946f4aa05e24c06, type: 3}
   m_Name: Personaje1
   m_EditorClassIdentifier: 
-  gameObject: {fileID: 2315102813196697652, guid: 89ea2935bebde7a44b7a5e853dc9904e, type: 3}
+  gameObject: {fileID: 1169350184361738324, guid: 7be5e4f6a90985c48bc580463ef615f9, type: 3}
   imagen: {fileID: -456206696, guid: eacd76dc898df7d4cacfc9d931d37bff, type: 3}
   nombre: Personaje 1
