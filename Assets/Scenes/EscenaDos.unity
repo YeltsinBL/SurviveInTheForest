@@ -29994,6 +29994,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Personaje1
       objectReference: {fileID: 0}
+    - target: {fileID: 1169350184361738324, guid: 7be5e4f6a90985c48bc580463ef615f9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7483280257182774628, guid: 7be5e4f6a90985c48bc580463ef615f9, type: 3}
       propertyPath: cambioVida.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
