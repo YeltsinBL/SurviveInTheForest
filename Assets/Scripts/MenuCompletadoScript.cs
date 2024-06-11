@@ -34,5 +34,6 @@ public class MenuCompletadoScript : MonoBehaviour
         Time.timeScale = 1;
         // detiene la ejecución del juego en unity
         Debug.Log("Nivel Siguiente");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 }
