@@ -11,13 +11,11 @@ public class MenuCompletadoScript : MonoBehaviour
 
     private void Start() {
         puntoDeControlScript = GameObject.FindGameObjectWithTag("PuntoDeControl").GetComponent<PuntoDeControlScript>();
-        Debug.Log("puntoDeControlScript: "+ puntoDeControlScript);
         puntoDeControlScript.NivelCompletado += ActivarMenu;
     }
 
     private void ActivarMenu(object sender, EventArgs e)
     {
-        Debug.Log("ActivarMenuCompletado");
         MenuCompletado.SetActive(true);
         Time.timeScale = 0;
     }

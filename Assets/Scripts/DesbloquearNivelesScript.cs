@@ -36,7 +36,6 @@ public class DesbloquearNivelesScript : MonoBehaviour
     }
     public void CambiarEscena(){
         DesbloquearNiveles();
-        Debug.Log(PlayerPrefs.GetInt("EscenaIndex"));
         SceneManager.LoadScene(PlayerPrefs.GetInt("EscenaIndex") + 2);
     }
 }

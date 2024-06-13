@@ -17,19 +17,16 @@ public class CorazonesUI : MonoBehaviour
         Debug.Log("CorazonesUI");
     }
     private void Awake() {
-        Debug.Log("CorazonesUI Awake");
         personajeVidaScript.cambioVida.AddListener(CambiarCorazones);
     }
 
     public void CambiarCorazones(int vidaActual)
     {
-        Debug.Log("Lista vacia: "+listaCorazones.Any());
         if(!listaCorazones.Any()) CrearCorazones(vidaActual);
         else CambiarVida(vidaActual);
     }
     private void CrearCorazones(int vidaMaxima)
     {
-        Debug.Log("CorazonesUI Crear");
         for (int i = 0; i < vidaMaxima; i++)
         {
             GameObject corazon = Instantiate(corazonPrefab, transform);

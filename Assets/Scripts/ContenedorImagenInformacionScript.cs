@@ -51,7 +51,6 @@ public class ContenedorImagenInformacionScript : MonoBehaviour
                 listaDeImagenInformacion.Add(contenedorImagenInformacion);
             }
         }else{
-            Debug.Log("Actualizar cantidad");
             for(int i = 0; i < listaDeImagenInformacion.Count(); i++){
                 AsignarCantidadInformacion(listaDeImagenInformacion[i], i);
             }

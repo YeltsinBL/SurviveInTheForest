@@ -24,7 +24,6 @@ public class PersonajeVidaScript : MonoBehaviour
         rigidbody2D = GetComponent<Rigidbody2D>();
         vidaActual = vidaMaxima;
         cambioVida.Invoke(vidaActual); // invocar este evento cada vez que la vida cambia
-        Debug.Log("vidaMaxima: "+vidaMaxima);
     }
     /*private void Update() {
         if(Input.GetButtonDown("Fire1") ){
@@ -57,7 +56,6 @@ public class PersonajeVidaScript : MonoBehaviour
         //animator.SetTrigger("Golpe");
         StartCoroutine(PerderControl());
         //Perder Control
-        Debug.Log("posicion: "+posicion);
         personajeUnoScript.Rebote(posicion);
 
     }

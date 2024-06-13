@@ -76,7 +76,6 @@ public class PersonajeUnoScript : MonoBehaviour
             tiempoSiguienteDash -= Time.deltaTime;
         }
         if(Input.GetKeyDown(KeyCode.B) && puedeHacerDash && tiempoSiguienteDash <=0){
-            Debug.Log("Dash");
             StartCoroutine(Dash());
             tiempoSiguienteDash = tiempoEntreDash;
         }
@@ -134,10 +133,8 @@ public class PersonajeUnoScript : MonoBehaviour
     }
 
     public void Rebote(Vector2 puntoGolpe){
-        Debug.Log("rigidbody2D.velocity:" +rigidbody2D.velocity);
         rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x+(-velocidadRebote.x*puntoGolpe.x),
                                         rigidbody2D.velocity.y+(velocidadRebote.y*puntoGolpe.y));
-        Debug.Log("rigidbody2D.velocity2:" +rigidbody2D.velocity);
     }
 
     // Escalar

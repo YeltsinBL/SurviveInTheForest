@@ -232,7 +232,6 @@ public class AdministradorNivelScript : MonoBehaviour
 /// Mostrar el candado de bloqueado y ocultar el botón jugar
 /// </summary>
     private void MostrarImagenBloqueado(){
-        Debug.Log(currentIndex+1 > PlayerPrefs.GetInt("NivelesDesbloqueados"));
         if (currentIndex+1 > PlayerPrefs.GetInt("NivelesDesbloqueados")){
             ImagenBloqueado.SetActive(true);
             BotonJugar.SetActive(false);

@@ -10,13 +10,11 @@ public class MenuPerdisteScript : MonoBehaviour
     private PersonajeVidaScript personajeVidaScript;
     private void Start() {
         personajeVidaScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PersonajeVidaScript>();
-        Debug.Log("personajeVidaScript: "+ personajeVidaScript);
         personajeVidaScript.MuerteJugador += ActivarMenu;
     }
 
     private void ActivarMenu(object sender, EventArgs e)
     {
-        Debug.Log("ActivarMenuPerdiste");
         MenuPerdiste.SetActive(true);
     }
 
