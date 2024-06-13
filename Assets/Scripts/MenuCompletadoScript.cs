@@ -18,6 +18,7 @@ public class MenuCompletadoScript : MonoBehaviour
     {
         MenuCompletado.SetActive(true);
         Time.timeScale = 0;
+        DesbloquearNiveles(PlayerPrefs.GetInt("NivelesDesbloqueados") + 1);
     }
 
     public void Reiniciar(){
@@ -30,8 +31,15 @@ public class MenuCompletadoScript : MonoBehaviour
     }
     public void ContinuarNivel(){
         Time.timeScale = 1;
-        // detiene la ejecución del juego en unity
-        Debug.Log("Nivel Siguiente");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+    }
+/// <summary>
+/// Desbloquear solo los niveles que no han sido activados
+/// </summary>
+    public void DesbloquearNiveles(int desbloquearNiveles){
+        // Aumenta el valor de las escenas desbloqueadas, solo si la escena actual es mayor a la ya guardada
+        if(desbloquearNiveles > PlayerPrefs.GetInt("NivelesDesbloqueados",1)){
+            PlayerPrefs.SetInt("NivelesDesbloqueados", desbloquearNiveles);
+        }
     }
 }
