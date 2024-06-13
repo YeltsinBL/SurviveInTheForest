@@ -69,6 +69,7 @@ public class PersonajeVidaScript : MonoBehaviour
         int vidaTemporal = vidaActual + cantidadCuracion;
         if (vidaTemporal > vidaMaxima) vidaActual = vidaMaxima;
         else vidaActual = vidaTemporal;
+        personajeUnoScript.ReproducirEfecto("recuperarvida");
         cambioVida.Invoke(vidaActual);
     }
 

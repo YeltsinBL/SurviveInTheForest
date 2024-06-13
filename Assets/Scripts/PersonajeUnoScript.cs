@@ -34,10 +34,12 @@ public class PersonajeUnoScript : MonoBehaviour
     private float tiempoSiguienteDash;
     [SerializeField] private TrailRenderer trailRenderer;
     private bool puedeHacerDash = true;
+    private AdministradorAudioScript administradorAudioScript;
 
     // Start is called before the first frame update
     void Start()
     {
+        administradorAudioScript = AdministradorAudioScript.Instance;
         rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         boxCollider2D = GetComponent<BoxCollider2D>();
@@ -121,6 +123,7 @@ public class PersonajeUnoScript : MonoBehaviour
     private void Jump(){
         rigidbody2D.AddForce(Vector2.up * jumpForce);
         salto=false;
+        administradorAudioScript.PlayEfecto("saltar");
     }
     
     private void Girar(){
@@ -154,4 +157,6 @@ public class PersonajeUnoScript : MonoBehaviour
 
         }
     }
+    public void ReproducirEfecto(string nombre)
+        => administradorAudioScript.PlayEfecto(nombre);
 }

@@ -19,7 +19,9 @@ public class PersonajeUnoAtaqueScript : MonoBehaviour
     [SerializeField] private float cantidadPuntosEnemigo;
     [SerializeField] private RecuentoScript recuentoScript;
 
+    private PersonajeUnoScript personajeUnoScript;
     private void Start() {
+        personajeUnoScript = GetComponent<PersonajeUnoScript>();
         animator = GetComponent<Animator>();
     }
     private void Update() {
@@ -41,11 +43,13 @@ public class PersonajeUnoAtaqueScript : MonoBehaviour
                 collider.transform.GetComponent<EnemigoScript>().TomarDanio(danioGolpe);
                 recuentoScript.SumarPuntos(cantidadPuntosEnemigo);
                 recuentoScript.RestarEnemigos();
+                personajeUnoScript.ReproducirEfecto("atacarenemigo");
             }
             if(collider.CompareTag("Basura")){
                 collider.transform.GetComponent<BasurasScript>().Eliminar();
                 recuentoScript.SumarPuntos(cantidadPuntosResiduo);
                 recuentoScript.RestarResiduos();
+                personajeUnoScript.ReproducirEfecto("recolectar");
             }
         }
     }
