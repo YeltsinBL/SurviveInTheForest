@@ -6,9 +6,11 @@ public class EnemigoScript : MonoBehaviour
 {
     [SerializeField] private float vida;
     private Animator animator;
+    private AdministradorAudioScript administradorAudioScript;
     // Start is called before the first frame update
     void Start()
     {
+        administradorAudioScript = AdministradorAudioScript.Instance;
         animator = GetComponent<Animator>();
     }
 
@@ -42,4 +44,6 @@ public class EnemigoScript : MonoBehaviour
             other.gameObject.GetComponent<PersonajeVidaScript>().TomarDanio(1,other.GetContact(0).normal);
         }
     }*/
+    public void ReproducirEfecto(string nombre)
+        => administradorAudioScript.PlayEfecto(nombre);
 }

@@ -43,7 +43,7 @@ public class PersonajeUnoAtaqueScript : MonoBehaviour
                 collider.transform.GetComponent<EnemigoScript>().TomarDanio(danioGolpe);
                 recuentoScript.SumarPuntos(cantidadPuntosEnemigo);
                 recuentoScript.RestarEnemigos();
-                personajeUnoScript.ReproducirEfecto("atacarenemigo");
+                personajeUnoScript.ReproducirEfecto("ataquepersonaje");
             }
             if(collider.CompareTag("Basura")){
                 collider.transform.GetComponent<BasurasScript>().Eliminar();

@@ -41,6 +41,7 @@ public class PersonajeVidaScript : MonoBehaviour
         else vidaActual = vidaTemporal;
 
         cambioVida.Invoke(vidaActual);
+        personajeUnoScript.ReproducirEfecto("perdervida");
 
         if(vidaActual <=0) {
             // Para que el personaje no se mueva después de morir
