@@ -8399,8 +8399,20 @@ PrefabInstance:
       value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 1397288736569161600, guid: 1dec244283c53814eae65049978de065, type: 3}
+      propertyPath: distanciaPared
+      value: 0.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397288736569161600, guid: 1dec244283c53814eae65049978de065, type: 3}
+      propertyPath: controladorPared
+      value: 
+      objectReference: {fileID: 930890966}
+    - target: {fileID: 1397288736569161600, guid: 1dec244283c53814eae65049978de065, type: 3}
       propertyPath: movimientoDerecha
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397288736569161600, guid: 1dec244283c53814eae65049978de065, type: 3}
+      propertyPath: capaEnFrente.m_Bits
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2227416659072000666, guid: 1dec244283c53814eae65049978de065, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8455,6 +8467,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dec244283c53814eae65049978de065, type: 3}
+--- !u!4 &930890966 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 628237666955219784, guid: 1dec244283c53814eae65049978de065, type: 3}
+  m_PrefabInstance: {fileID: 930890965}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &949428533
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9381,8 +9398,20 @@ PrefabInstance:
       value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 1397288736569161600, guid: 1dec244283c53814eae65049978de065, type: 3}
+      propertyPath: distanciaPared
+      value: 0.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397288736569161600, guid: 1dec244283c53814eae65049978de065, type: 3}
+      propertyPath: controladorPared
+      value: 
+      objectReference: {fileID: 1161146556}
+    - target: {fileID: 1397288736569161600, guid: 1dec244283c53814eae65049978de065, type: 3}
       propertyPath: movimientoDerecha
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397288736569161600, guid: 1dec244283c53814eae65049978de065, type: 3}
+      propertyPath: capaEnFrente.m_Bits
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2227416659072000666, guid: 1dec244283c53814eae65049978de065, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9437,6 +9466,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dec244283c53814eae65049978de065, type: 3}
+--- !u!4 &1161146556 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 628237666955219784, guid: 1dec244283c53814eae65049978de065, type: 3}
+  m_PrefabInstance: {fileID: 1161146555}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1188991971
 GameObject:
   m_ObjectHideFlags: 0

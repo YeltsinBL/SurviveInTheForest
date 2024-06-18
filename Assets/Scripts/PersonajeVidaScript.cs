@@ -25,14 +25,21 @@ public class PersonajeVidaScript : MonoBehaviour
         vidaActual = vidaMaxima;
         cambioVida.Invoke(vidaActual); // invocar este evento cada vez que la vida cambia
     }
-    /*private void Update() {
-        if(Input.GetButtonDown("Fire1") ){
+    private void Update() {
+        /*if(Input.GetButtonDown("Fire1") ){
             TomarDanio(valorPrueba);
         }
         if(Input.GetButtonDown("Fire2") ){
             CurarVida(valorPrueba);
+        }*/
+        if(vidaActual <=0) {
+            // Para que el personaje no se mueva después de morir
+            rigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
+            animator.SetTrigger("Muerte");
+            // Ignorar las colisiones
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Jugador"),LayerMask.NameToLayer("Enemigos"),true);
         }
-    }*/
+    }
     
     public void TomarDanio(int cantidadDanio){
         int vidaTemporal = vidaActual-cantidadDanio;
@@ -42,13 +49,13 @@ public class PersonajeVidaScript : MonoBehaviour
         cambioVida.Invoke(vidaActual);
         personajeUnoScript.ReproducirEfecto("perdervida");
 
-        if(vidaActual <=0) {
+        /*if(vidaActual <=0) {
             // Para que el personaje no se mueva después de morir
             rigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
             animator.SetTrigger("Muerte");
             // Ignorar las colisiones
             Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Jugador"),LayerMask.NameToLayer("Enemigos"),true);
-        }
+        }*/
     }
     public void TomarDanio(int danio, Vector2 posicion){
         //vidaActual -=danio;

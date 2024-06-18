@@ -16,13 +16,16 @@ public class MenuPerdisteScript : MonoBehaviour
     private void ActivarMenu(object sender, EventArgs e)
     {
         MenuPerdiste.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void Reiniciar(){
+        Time.timeScale = 1;
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Jugador"),LayerMask.NameToLayer("Enemigos"),false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void MenuInicial(string nombre){
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Jugador"),LayerMask.NameToLayer("Enemigos"),false);
         SceneManager.LoadScene(nombre);
     }
     public void Salir(){

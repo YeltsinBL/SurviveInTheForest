@@ -329,7 +329,7 @@ MonoBehaviour:
     m_Bits: 8
   capaEnFrente:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 1032
   distanciaAbajo: 0.8
   distanciaEnFrente: 0.42
   controladorAbajo: {fileID: 846809304045977742}
@@ -529,3 +529,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadRebote: {x: 1, y: 0.8}
+  "da\xF1oRealizado": 1
