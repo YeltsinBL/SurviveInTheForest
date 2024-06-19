@@ -6163,9 +6163,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8056445134220740831}
-        m_TargetAssemblyTypeName: MenuPausaScript, Assembly-CSharp
-        m_MethodName: Pausa
+      - m_Target: {fileID: 2597336102600137087}
+        m_TargetAssemblyTypeName: InformacionScript, Assembly-CSharp
+        m_MethodName: Informacion
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

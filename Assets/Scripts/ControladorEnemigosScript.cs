@@ -9,7 +9,10 @@ public class ControladorEnemigosScript : MonoBehaviour
     [SerializeField] private Transform[] puntos;
     [SerializeField] private GameObject[] enemigos;
     [SerializeField] private float tiempoEnemigos;
-    private float tiempoSiguienteEnemigo;
+    private float tiempoSiguienteEnemigo; 
+    [SerializeField] private float tiempo;
+    private float tiempoCambio;
+    private bool enemigo= true;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,10 +25,16 @@ public class ControladorEnemigosScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tiempoSiguienteEnemigo += Time.deltaTime;
-        if (tiempoSiguienteEnemigo >= tiempoEnemigos){
-            tiempoSiguienteEnemigo =0;
-            CrearEnemigo();
+        if (enemigo){
+            tiempoSiguienteEnemigo += Time.deltaTime;
+            if (tiempoSiguienteEnemigo >= tiempoEnemigos){
+                tiempoSiguienteEnemigo =0;
+                CrearEnemigo();
+            }
+            tiempoCambio += Time.deltaTime;
+            if(tiempoCambio >= tiempo){
+                enemigo=false;
+            }
         }
     }
 
