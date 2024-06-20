@@ -9,7 +9,7 @@ public class MenuTerminadoScript : MonoBehaviour
     [SerializeField] private GameObject MenuTerminado;
     private EnemigoJefe jefe;
     private void Start() {
-        jefe = GameObject.FindGameObjectWithTag("Enemigo").GetComponent<EnemigoJefe>();
+        jefe = GameObject.Find("Jefe").GetComponent<EnemigoJefe>();
         jefe.MuerteJefe += ActivarMenu;
     }
 
@@ -28,9 +28,4 @@ public class MenuTerminadoScript : MonoBehaviour
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Jugador"),LayerMask.NameToLayer("Enemigos"),false);
         SceneManager.LoadScene(nombre);
     }
-    /*public void Salir(){
-        // detiene la ejecución del juego en unity
-        UnityEditor.EditorApplication.isPlaying=false;
-        Application.Quit();
-    }*/
 }

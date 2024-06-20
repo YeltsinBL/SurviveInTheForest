@@ -22,12 +22,18 @@ public class ControladorEnemigosScript : MonoBehaviour
     private float tiempoCambioCaida;
     private bool caidas= false;
     // Start is called before the first frame update
+    [SerializeField] private GameObject jefe;
+    [SerializeField] private GameObject Menus;
+    private MenuTerminadoScript menuTerminado;
     void Start()
     {
         maxX =puntos.Max(punto => punto.position.x);
         maxY =puntos.Max(punto => punto.position.y);
         minX =puntos.Min(punto => punto.position.x);
         minY =puntos.Min(punto => punto.position.y);
+        jefe = GameObject.Find("Jefe");
+        menuTerminado = Menus.GetComponent<MenuTerminadoScript>();
+        jefe.SetActive(false);
     }
 
     // Update is called once per frame
@@ -35,11 +41,6 @@ public class ControladorEnemigosScript : MonoBehaviour
     {
         if (enemigo){
             ControlarReSpawn(tiempoEnemigos);
-            /*tiempoSiguienteEnemigo += Time.deltaTime;
-            if (tiempoSiguienteEnemigo >= tiempoEnemigos){
-                tiempoSiguienteEnemigo =0;
-                CrearEnemigo();
-            }*/
             tiempoCambio += Time.deltaTime;
             if(tiempoCambio >= tiempo){
                 enemigo=false;
@@ -55,15 +56,13 @@ public class ControladorEnemigosScript : MonoBehaviour
         if (caidas){
             ControlarReSpawn(tiempoEnemigosCaida);
             Debug.Log("tiempoSiguienteEnemigo"+tiempoSiguienteEnemigo);
-            /*tiempoSiguienteEnemigo += Time.deltaTime;
-            if (tiempoSiguienteEnemigo >= tiempoEnemigosCaida){
-                tiempoSiguienteEnemigo =0;
-                CrearEnemigo();
-            }*/
             tiempoCambioCaida += Time.deltaTime;
             Debug.Log(tiempoCambioCaida >= tiempoCaida);
             if(tiempoCambioCaida >= tiempoCaida){
                 caidas = false;
+                jefe.SetActive(true);
+                if(menuTerminado != null) menuTerminado.enabled = true;
+
             }
         }
     }

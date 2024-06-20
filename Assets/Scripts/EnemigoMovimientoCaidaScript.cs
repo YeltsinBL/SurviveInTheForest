@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemigoMovimientoCaidaScript : MonoBehaviour
 {
-    public float caida=20;
+    public float caida;
     void Start()
     {
         Destroy(gameObject,10);
