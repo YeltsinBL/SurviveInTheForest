@@ -54,7 +54,7 @@ public class AdministradorNivelScript : MonoBehaviour
             timer = autoMoveTime;
             InvokeRepeating("AutoMoveContent", 1f, 1f); // Invoke every second to update the timer
         }
-        //PlayerPrefs.SetInt("NivelesDesbloqueados",2);
+        PlayerPrefs.SetInt("NivelesDesbloqueados",3);
         EstadoNiveles();
     }
     void Update()
