@@ -219,6 +219,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &166956332 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6845838878919290290, guid: 75f15a6aa7649c74d956d7c2f0ddd09d, type: 3}
+  m_PrefabInstance: {fileID: 1713278219}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77e473f935e80d74bab6b9f51f2f2c96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &177423860 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7483280257182774628, guid: 7be5e4f6a90985c48bc580463ef615f9, type: 3}
@@ -3234,6 +3245,18 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3415300054023335090, guid: 75f15a6aa7649c74d956d7c2f0ddd09d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 166956332}
+    - target: {fileID: 3415300054023335090, guid: 75f15a6aa7649c74d956d7c2f0ddd09d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MenuInicial
+      objectReference: {fileID: 0}
+    - target: {fileID: 3415300054023335090, guid: 75f15a6aa7649c74d956d7c2f0ddd09d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuTerminadoScript, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3652687218807592899, guid: 75f15a6aa7649c74d956d7c2f0ddd09d, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -3292,7 +3315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4837189633578471781, guid: 75f15a6aa7649c74d956d7c2f0ddd09d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000013113022
+      value: -0.000010073185
       objectReference: {fileID: 0}
     - target: {fileID: 4912873879049244093, guid: 75f15a6aa7649c74d956d7c2f0ddd09d, type: 3}
       propertyPath: m_SizeDelta.x
@@ -3360,7 +3383,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6015709881128164943, guid: 75f15a6aa7649c74d956d7c2f0ddd09d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000012993813
+      value: -0.000010102987
       objectReference: {fileID: 0}
     - target: {fileID: 6714845792889821897, guid: 75f15a6aa7649c74d956d7c2f0ddd09d, type: 3}
       propertyPath: m_Pivot.x
@@ -3445,6 +3468,14 @@ PrefabInstance:
     - target: {fileID: 7551046293729153398, guid: 75f15a6aa7649c74d956d7c2f0ddd09d, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652331814440275572, guid: 75f15a6aa7649c74d956d7c2f0ddd09d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 166956332}
+    - target: {fileID: 8652331814440275572, guid: 75f15a6aa7649c74d956d7c2f0ddd09d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuTerminadoScript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8676898542535613609, guid: 75f15a6aa7649c74d956d7c2f0ddd09d, type: 3}
       propertyPath: m_SizeDelta.x

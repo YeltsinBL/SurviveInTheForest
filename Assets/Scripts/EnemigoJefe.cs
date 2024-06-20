@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemigoJefe : MonoBehaviour
 {
@@ -8,6 +10,7 @@ public class EnemigoJefe : MonoBehaviour
     public new Rigidbody2D rigidbody2D;
     public Transform jugador;
     private bool mirandoDerecha = false;
+    public event EventHandler MuerteJefe;
 
     //[Header("Vida")]
     //[SerializeField] private float vida;
@@ -40,12 +43,12 @@ public class EnemigoJefe : MonoBehaviour
         if(jugador != null){
         float distanciaJugador = Vector2.Distance(transform.position, jugador.position);
         animator.SetFloat("distanciaJugador", distanciaJugador);
-        Debug.Log("distanciaJugador"+ distanciaJugador);
+        //Debug.Log("distanciaJugador"+ distanciaJugador);
 
         }
     }
     public void MirarJugador(){
-        Debug.Log("MirarJugador"+ jugador.position.x + "-"+transform.position.x  +"-"+ mirandoDerecha);
+        //Debug.Log("MirarJugador"+ jugador.position.x + "-"+transform.position.x  +"-"+ mirandoDerecha);
         if((jugador.position.x > transform.position.x && !mirandoDerecha) || (jugador.position.x < transform.position.x && mirandoDerecha)){
             mirandoDerecha =!mirandoDerecha;
             transform.eulerAngles = new Vector3(0,transform.eulerAngles.y +180,0);
@@ -66,4 +69,5 @@ public class EnemigoJefe : MonoBehaviour
         Gizmos.DrawWireSphere(controladorAtaque.position,radioAtaque);
     }
 
+    public void MuerteJefeEvento()=>MuerteJefe?.Invoke(this, EventArgs.Empty);
 }
