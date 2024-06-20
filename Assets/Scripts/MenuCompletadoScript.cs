@@ -38,7 +38,7 @@ public class MenuCompletadoScript : MonoBehaviour
 /// </summary>
     public void DesbloquearNiveles(int desbloquearNiveles){
         // Aumenta el valor de las escenas desbloqueadas, solo si la escena actual es mayor a la ya guardada
-        if(desbloquearNiveles > PlayerPrefs.GetInt("NivelesDesbloqueados",1)){
+        if(desbloquearNiveles > PlayerPrefs.GetInt("NivelesDesbloqueados",1) &&  desbloquearNiveles<=PlayerPrefs.GetInt("NivelesTotales")){
             PlayerPrefs.SetInt("NivelesDesbloqueados", desbloquearNiveles);
         }
     }
