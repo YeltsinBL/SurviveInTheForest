@@ -3566,7 +3566,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5369,6 +5369,7 @@ MonoBehaviour:
   img: {fileID: 321630776}
   nombre: {fileID: 1180317052}
   animatorPrefab: {fileID: 321630775}
+  PuntajeGlobal: {fileID: 629786264}
 --- !u!114 &1021996659
 MonoBehaviour:
   m_ObjectHideFlags: 0
