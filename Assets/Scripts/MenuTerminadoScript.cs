@@ -11,11 +11,14 @@ public class MenuTerminadoScript : MonoBehaviour
     private void Start() {
         jefe = GameObject.Find("Jefe").GetComponent<EnemigoJefe>();
         jefe.MuerteJefe += ActivarMenu;
+        
     }
 
     private void ActivarMenu(object sender, EventArgs e)
     {
         MenuTerminado.SetActive(true);
+        PlayerPrefs.SetFloat("PuntajeTotal", PlayerPrefs.GetFloat("PuntajeTotal")+PlayerPrefs.GetFloat("PuntajeEscena"));
+        PlayerPrefs.SetFloat("PuntajeEscena",0);
         //Time.timeScale = 0;
     }
 

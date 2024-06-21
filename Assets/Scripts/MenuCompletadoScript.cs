@@ -19,6 +19,9 @@ public class MenuCompletadoScript : MonoBehaviour
         MenuCompletado.SetActive(true);
         Time.timeScale = 0;
         DesbloquearNiveles(PlayerPrefs.GetInt("NivelesDesbloqueados") + 1);
+        
+        PlayerPrefs.SetFloat("PuntajeTotal", PlayerPrefs.GetFloat("PuntajeTotal")+PlayerPrefs.GetFloat("PuntajeEscena"));
+        PlayerPrefs.SetFloat("PuntajeEscena",0);
     }
 
     public void Reiniciar(){

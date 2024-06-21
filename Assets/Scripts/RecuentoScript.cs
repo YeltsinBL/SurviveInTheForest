@@ -31,6 +31,8 @@ public class RecuentoScript : MonoBehaviour
     }
     public void SumarPuntos(float puntosEntrada){
         nroPuntos +=puntosEntrada;
+        Debug.Log("Recuento " + nroPuntos);
+        PlayerPrefs.SetFloat("PuntajeEscena", nroPuntos);
     }
     public void RestarResiduos(){
         nroResiduos--;

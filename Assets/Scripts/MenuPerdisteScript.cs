@@ -17,6 +17,7 @@ public class MenuPerdisteScript : MonoBehaviour
     {
         MenuPerdiste.SetActive(true);
         Time.timeScale = 0;
+        PlayerPrefs.SetFloat("PuntajeEscena", 0);
     }
 
     public void Reiniciar(){

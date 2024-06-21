@@ -12,6 +12,8 @@ public class MenuInicialScript : MonoBehaviour
     [SerializeField] private TextMeshProUGUI nombre;
     [SerializeField] private Animator animatorPrefab;
     private AdministradorPersonajesScript administradorPersonajes;
+    [SerializeField] private TextMeshProUGUI PuntajeGlobal;
+    private TextMeshProUGUI textoPuntaje;
 
     private void Start() {
         // Para que mantenga la misma instancia del Script
@@ -22,6 +24,9 @@ public class MenuInicialScript : MonoBehaviour
         // Por si se ha borrado algun personaje, que escoja al primero
         if (index > administradorPersonajes.personajes.Count - 1) index =0;
         CambiarPersonajePantalla();
+        
+        textoPuntaje = PuntajeGlobal.GetComponent<TextMeshProUGUI>();
+        textoPuntaje.text = PlayerPrefs.GetFloat("PuntajeTotal").ToString("0");
     }
 
     private void CambiarPersonajePantalla(){
