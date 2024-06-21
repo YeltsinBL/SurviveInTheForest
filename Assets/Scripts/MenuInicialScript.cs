@@ -15,6 +15,10 @@ public class MenuInicialScript : MonoBehaviour
     [SerializeField] private TextMeshProUGUI PuntajeGlobal;
     private TextMeshProUGUI textoPuntaje;
 
+    [Header("Desbloquear Nivel")]
+    [SerializeField] private GameObject ImagenBloqueado;
+    [SerializeField] private GameObject BotonJugar;
+
     private void Start() {
         // Para que mantenga la misma instancia del Script
         administradorPersonajes = AdministradorPersonajesScript.Instance;
@@ -31,6 +35,16 @@ public class MenuInicialScript : MonoBehaviour
 
     private void CambiarPersonajePantalla(){
         PlayerPrefs.SetInt("JugadorIndex", index);
+        if(index >=1) {
+            ImagenBloqueado.SetActive(true);
+            BotonJugar.SetActive(false);
+            img.color = new Color32(123,105,105,244);
+        }
+        else {
+            ImagenBloqueado.SetActive(false);
+            BotonJugar.SetActive(true);
+            img.color = new Color32(255,255,255,255);
+        }
         Personajes personajeSeleccioando= administradorPersonajes.personajes[index];
         nombre.text = personajeSeleccioando.nombre;
         animatorPrefab.runtimeAnimatorController= personajeSeleccioando.gameObject.GetComponent<Animator>().runtimeAnimatorController;
