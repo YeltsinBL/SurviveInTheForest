@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemigoScript : MonoBehaviour
 {
     [SerializeField] private float vida;
+    [SerializeField] private Slider barravida;
     private Animator animator;
     private AdministradorAudioScript administradorAudioScript;
     // Start is called before the first frame update
@@ -12,10 +14,16 @@ public class EnemigoScript : MonoBehaviour
     {
         administradorAudioScript = AdministradorAudioScript.Instance;
         animator = GetComponent<Animator>();
+        
+        if(barravida != null) {
+            barravida.maxValue = vida;
+            barravida.value = vida;
+        }
     }
 
     public void TomarDanio(float danioGolpe){
         vida -=danioGolpe;
+        if(barravida != null) barravida.value = vida;
         if(vida <= 0){
             Muerte();
         }
