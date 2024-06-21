@@ -31,7 +31,7 @@ public class MenuPerdisteScript : MonoBehaviour
     }
     public void Salir(){
         // detiene la ejecución del juego en unity
-        UnityEditor.EditorApplication.isPlaying=false;
+        //UnityEditor.EditorApplication.isPlaying=false;
         Application.Quit();
     }
 }

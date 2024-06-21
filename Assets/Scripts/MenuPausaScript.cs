@@ -29,7 +29,11 @@ public class MenuPausaScript : MonoBehaviour
     }
     public void Reiniciar(){
         Time.timeScale = 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         PlayerPrefs.SetFloat("PuntajeEscena", 0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public void MenuInicial(string nombre){
+        PlayerPrefs.SetFloat("PuntajeEscena", 0);
+        SceneManager.LoadScene(nombre);
     }
 }

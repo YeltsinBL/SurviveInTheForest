@@ -9262,7 +9262,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000015259, y: 0}
+  m_AnchoredPosition: {x: 350, y: 0}
   m_SizeDelta: {x: 192.3887, y: 169.8651}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5408985198295746127
@@ -9933,8 +9933,8 @@ RectTransform:
   m_Children:
   - {fileID: 5850229339975785152}
   - {fileID: 8099424610316490014}
-  - {fileID: 5570193001549457538}
   - {fileID: 2145477460777733308}
+  - {fileID: 5570193001549457538}
   m_Father: {fileID: 8853361336236505221}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -11181,7 +11181,7 @@ GameObject:
   - component: {fileID: 2099479220013731918}
   - component: {fileID: 5515694590652369447}
   m_Layer: 5
-  m_Name: BotonSalirJuego
+  m_Name: BotonMenuInicial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11203,7 +11203,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 350, y: 0}
+  m_AnchoredPosition: {x: -4, y: 0}
   m_SizeDelta: {x: 192.3887, y: 169.8651}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5058964519077310033
@@ -11234,7 +11234,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300120, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
+  m_Sprite: {fileID: 21300072, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11288,16 +11288,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3677348701192309798}
-        m_TargetAssemblyTypeName: MenuPerdisteScript, Assembly-CSharp
-        m_MethodName: Salir
-        m_Mode: 1
+      - m_Target: {fileID: 8056445134220740831}
+        m_TargetAssemblyTypeName: MenuPausaScript, Assembly-CSharp
+        m_MethodName: MenuInicial
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: EscenaPrincipal
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &8244703824574882417

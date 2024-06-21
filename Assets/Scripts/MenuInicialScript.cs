@@ -50,7 +50,7 @@ public class MenuInicialScript : MonoBehaviour
     }
     public void Salir(){
         Debug.Log("Salir");
-        UnityEditor.EditorApplication.isPlaying=false;
+        //UnityEditor.EditorApplication.isPlaying=false;
         Application.Quit(); // solo funciona cuando el juego esta creado
     }
 
