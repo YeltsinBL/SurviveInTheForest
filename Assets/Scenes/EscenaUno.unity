@@ -12721,6 +12721,10 @@ PrefabInstance:
       propertyPath: personajeVidaScript
       value: 
       objectReference: {fileID: 1326438217}
+    - target: {fileID: 2976599059290734193, guid: 75f15a6aa7649c74d956d7c2f0ddd09d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3008146454003537601, guid: 75f15a6aa7649c74d956d7c2f0ddd09d, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

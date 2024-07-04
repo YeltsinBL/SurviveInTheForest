@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -995544954, guid: 2a853a57267c84e429b0c27bfa5f5bfa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2faec7cdbfcb05d4c89a829d2d9283c6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -219,6 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vida: 1
+  barravida: {fileID: 0}
 --- !u!1 &3458894585532538430
 GameObject:
   m_ObjectHideFlags: 0

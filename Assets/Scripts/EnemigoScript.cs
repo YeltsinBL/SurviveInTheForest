@@ -20,6 +20,11 @@ public class EnemigoScript : MonoBehaviour
             barravida.value = vida;
         }
     }
+    private void Update() {
+        if(vida <= 0){
+            Muerte();
+        }
+    }
 
     public void TomarDanio(float danioGolpe){
         vida -=danioGolpe;

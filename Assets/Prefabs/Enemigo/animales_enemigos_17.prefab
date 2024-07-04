@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1108127650, guid: 2a853a57267c84e429b0c27bfa5f5bfa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c1ecebd8385e5e346b48ee1c39992911, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vida: 1
+  barravida: {fileID: 0}
 --- !u!50 &2951218938879477820
 Rigidbody2D:
   serializedVersion: 4
@@ -206,7 +207,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.57, y: 0.64}
+    oldSize: {x: 0.56, y: 0.64}
     newSize: {x: 0.57, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -228,3 +229,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadRebote: {x: 0, y: 0}
+  "da\xF1oRealizado": 0
